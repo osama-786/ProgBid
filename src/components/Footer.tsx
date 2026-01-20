@@ -31,7 +31,7 @@ const Footer = () => {
               {[
                 { icon: Facebook, href: "#" },
                 { icon: Twitter, href: "#" },
-                { icon: Linkedin, href: "https://www.linkedin.com/company/app-ladder/" },
+                { icon: Linkedin, href: "https://www.linkedin.com/company/progbid/" },
                 { icon: Instagram, href: "#" }
               ].map((social, idx) => (
                 <a

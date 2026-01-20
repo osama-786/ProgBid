@@ -74,7 +74,7 @@ const GetstartedModalButton: React.FC = () => {
             </select>
           </div>
           <button
-            className="mt-6 w-full flex items-center justify-center gap-2 px-6 py-3 bg-blue-700 text-white font-bold rounded-full shadow hover:bg-[#3a3ad9] hover:text-white transition"
+            className="mt-6 w-full flex items-center justify-center gap-2 px-6 py-3 bg-blue-800 text-white font-bold rounded-full shadow hover:bg-[#3a3ad9] hover:text-white transition"
             type="submit"
           >
             Book Your Demo <ArrowRight className="w-5 h-5 ml-1" />
