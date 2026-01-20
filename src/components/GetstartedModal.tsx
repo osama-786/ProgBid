@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const BrandLogo: React.FC = () => (
   <div className="flex items-center gap-2">
-    <img className="h-auto w-auto lg:w-32" src="/src/assets/ProgbidLogo.png" alt="progbid-logo" />
+    <img className="h-auto w-auto lg:w-32" src="./ProgbidLogo.png" alt="progbid-logo" />
   </div>
 );
 
