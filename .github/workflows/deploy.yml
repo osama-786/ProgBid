@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: Deploy to DigitalOcean
 
 on:
@@ -11,12 +12,16 @@ jobs:
 
     steps:
       - name: Deploy to DigitalOcean
+=======
+       - name: Deploy to DigitalOcean
+>>>>>>> e0fe3beaf447dea73f8bfb0dcaf263cec82e5fd1
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
+<<<<<<< HEAD
             # 1. Go to the folder
             cd /var/www/html
 
@@ -30,3 +35,16 @@ jobs:
             # 4. Clean Install & Build
             npm ci
             npm run build
+=======
+            cd /var/www/html
+            # 1. Force the server to match GitHub exactly (Delete local changes)
+            git fetch --all
+            git reset --hard origin/main
+            
+            # 2. Now pull (It will work 100%)
+            git pull origin main
+            
+            # 3. Clean Install & Build
+            npm ci
+            npm run build
+>>>>>>> e0fe3beaf447dea73f8bfb0dcaf263cec82e5fd1
