@@ -15,7 +15,7 @@ const GetstartedModalButton: React.FC = () => {
 
   return (
     <>
-      <Button size="lg" className="btn-primary rounded-full"
+      <Button size="lg" className="btn-primary rounded-full font-bold"
         onClick={() => setOpen(true)}
       >
         GET STARTED WITH PROGBID
