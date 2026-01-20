@@ -1,0 +1,29 @@
+name: Deploy Vite App
+
+on:
+  push:
+    branches:
+      - main  # Ensure this matches your branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            # 1. Navigate to the folder
+            cd /var/www/html
+
+            # 2. Pull the latest code
+            git pull origin main
+
+            # 3. Install dependencies (Clean install)
+            npm ci
+
+            # 4. Build the project (This creates the 'dist' folder)
+            npm run build
