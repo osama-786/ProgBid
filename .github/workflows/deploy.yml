@@ -1,29 +1,32 @@
-name: Deploy Vite App
+name: Deploy to DigitalOcean
 
 on:
   push:
     branches:
-      - main  # Ensure this matches your branch name
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.0
+      - name: Deploy to DigitalOcean
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            # 1. Navigate to the folder
+            # 1. Go to the folder
             cd /var/www/html
 
-            # 2. Pull the latest code
-            git pull origin main
+            # 2. Fix "Dubious Ownership" error automatically
+            git config --global --add safe.directory /var/www/html
 
-            # 3. Install dependencies (Clean install)
+            # 3. Force the server to match GitHub (The "Nuclear" Option)
+            git fetch --all
+            git reset --hard origin/main
+
+            # 4. Clean Install & Build
             npm ci
-
-            # 4. Build the project (This creates the 'dist' folder)
             npm run build
