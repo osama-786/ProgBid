@@ -1,9 +1,9 @@
 import React, { useRef, useState, useLayoutEffect, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import ProgbidDifference1 from "@/assets/ProgbidDifference1.png";
-import ProgbidDifference2 from "@/assets/ProgbidDifference2.png";
-import ProgbidDifference3 from "@/assets/ProgbidDifference3.png";
-import ProgbidDifference4 from "@/assets/ProgbidDifference4.png";
+import ProgbidDifference1 from "@/assets/ProgbidDifference1.jpg";
+import ProgbidDifference2 from "@/assets/ProgbidDifference2.jpg";
+import ProgbidDifference3 from "@/assets/ProgbidDifference3.jpg";
+import ProgbidDifference4 from "@/assets/ProgbidDifference4.jpg";
 
 type Slide = {
   id: string;
@@ -149,7 +149,7 @@ export default function ProgbidDifference(): JSX.Element {
       const img = new Image();
       img.src = slide.imageSrc;
     });
-    
+
   }, []);
   return (
     <section className="relative py-24 overflow-hidden bg-white mx-4 md:mx-8 rounded-[3rem] my-8 shadow-md">
@@ -238,6 +238,9 @@ export default function ProgbidDifference(): JSX.Element {
                     <img
                       src={slides[active].imageSrc}
                       alt={slides[active].imageAlt}
+                      decoding="async"            // Prevents UI freeze while decoding
+                      loading="eager"             // Forces immediate load
+                      style={{ willChange: "transform, opacity" }}
                       className="w-[220px] h-[220px] md:w-[320px] md:h-[320px] lg:w-[420px] lg:h-[420px] object-cover rounded-xl shadow-2xl"
                       draggable={false}
                     />
