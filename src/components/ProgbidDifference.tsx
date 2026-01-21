@@ -143,6 +143,14 @@ export default function ProgbidDifference(): JSX.Element {
     setActive(index);
   };
 
+  // This forces the browser to download all images immediately in the background
+  useEffect(() => {
+    slides.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.imageSrc;
+    });
+    
+  }, []);
   return (
     <section className="relative py-24 overflow-hidden bg-white mx-4 md:mx-8 rounded-[3rem] my-8 shadow-md">
       <div className="container mx-auto px-6 py-6">

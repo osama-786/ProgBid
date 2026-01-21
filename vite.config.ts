@@ -19,4 +19,17 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    chunkSizeWarningLimit: 1000, // increasing chunk size limit to 1MB
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          // Separates all third-party libraries into a "vendor" file
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        },
+      },
+    },
+  },
 }));
