@@ -1,8 +1,10 @@
 import { ExampleWithModalButton } from "./UniversalModal";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const HeroSection = () => {
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  // State to track when video is actually ready to show
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -10,22 +12,37 @@ const HeroSection = () => {
     }
   }, []);
 
+  const handleVideoLoad = () => {
+    setIsVideoLoaded(true);
+  };
+
   return (
     <section className="relative h-screen min-h-[800px] w-full overflow-hidden bg-black">
       
-      {/* --- LAYER 1: Background Video --- */}
+      {/* --- LAYER 1: Immediate Background Image (The "Poster") --- */}
+      {/* This shows instantly while the video loads to prevent black flash */}
+      <img 
+        src="/hero-bg.jpg"
+        alt="Background"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      />
+
+      {/* --- LAYER 2: Background Video --- */}
       <video
         ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
-        poster="/public/hero-bg.jpg"
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        preload="auto" // 1. Force browser to load immediately
+        onLoadedData={handleVideoLoad} // 2. Trigger fade-in when data is ready
+        className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${
+          isVideoLoaded ? "opacity-100" : "opacity-0"
+        }`} // 3. Smooth fade from 0 to 100
       >
         <source src="/HomepageVideo.mp4" type="video/mp4" />
       </video>
-      
+
       {/* --- LAYER 3: Decorative Glow/Blobs --- */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
 
@@ -34,7 +51,7 @@ const HeroSection = () => {
         
         {/* 1. HEADLINE AREA */}
         <div className="flex-grow flex flex-col items-center justify-center text-center max-w-5xl pb-8 pt-28">
-          <h1 className=" text-2xl md:text-2xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+          <h1 className="text-2xl md:text-2xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
             BUILT FOR APP GROWTH.<br/><span className="text-white"> DRIVEN BY AI.</span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-pink-600 animate-shimmer pb-2">
@@ -44,7 +61,6 @@ const HeroSection = () => {
         </div>
 
         {/* 2. BOTTOM ANCHORED AREA */}
-        {/* INCREASED PADDING BOTTOM HERE (pb-20 md:pb-32) TO LIFT EVERYTHING UP */}
         <div className="w-full max-w-5xl flex flex-col items-center pb-16 md:pb-28">
           
           {/* Subheadline Pill */}
