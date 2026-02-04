@@ -98,7 +98,7 @@ const HeroSection = () => {
               <img 
                 src="/amazon.png" 
                 alt="Amazon" 
-                className="h-8 md:h-7 w-auto object-contain filter-none opacity-100 hover:scale-110 transition-transform duration-300 drop-shadow-sm" 
+                className="pt-1 h-8 md:h-8 w-auto object-contain filter-none opacity-100 hover:scale-110 transition-transform duration-300 drop-shadow-sm" 
               />
               <img 
                 src="/UberLogo.png" 
