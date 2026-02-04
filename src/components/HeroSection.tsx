@@ -101,8 +101,8 @@ const HeroSection = () => {
                 className="h-8 md:h-7 w-auto object-contain filter-none opacity-100 hover:scale-110 transition-transform duration-300 drop-shadow-sm" 
               />
               <img 
-                src="/888.png" 
-                alt="888" 
+                src="/Uber.webp" 
+                alt="Uber" 
                 className="h-8 md:h-7 w-auto object-contain filter-none opacity-100 hover:scale-110 transition-transform duration-300 drop-shadow-sm" 
               />
               <img 

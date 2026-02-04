@@ -177,7 +177,7 @@ const RetargetingReEngagementPage = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-slate-900">
-              Key <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600">Features</span>
+              Key <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-violet-400">Features</span>
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Advanced retargeting solutions designed to bring back your most valuable users.

@@ -7,7 +7,7 @@ const companies = [
   { image: "/companies/monese.png", name: "Monese" },
   { image: "/companies/labeb.png", name: "Labeb" },
   { image: "/companies/bright.png", name: "Bright" },
-  { image: "/companies/octafx.png", name: "OctaFX" }
+  { image: "/crypto.png", name: "Crypto.com" }
 ];
 
 const testimonials = [
