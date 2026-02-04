@@ -7,7 +7,7 @@ const companies = [
   { image: "/companies/monese.png", name: "Monese" },
   { image: "/companies/labeb.png", name: "Labeb" },
   { image: "/companies/bright.png", name: "Bright" },
-  { image: "/crypto.png", name: "Crypto.com" }
+  { image: "/companies/crypto.png", name: "Crypto.com" }
 ];
 
 const testimonials = [
@@ -15,7 +15,7 @@ const testimonials = [
     name: "Sarah Chen",
     title: "Growth Manager",
     company: "Betway",
-    logo: "/betway.jpg", // Use the correct logo path for Betway
+    logo: "/betway.png", // Use the correct logo path for Betway
     rating: 5,
     text: "Progbid helped us scale from 10K to 1M+ downloads in just 6 months. Their AI optimization is incredible our CPI dropped 40% while quality improved dramatically.",
     avatar: "SC",
