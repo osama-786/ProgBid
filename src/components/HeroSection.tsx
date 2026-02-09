@@ -51,7 +51,7 @@ const HeroSection = () => {
         
         {/* 1. HEADLINE AREA */}
         <div className="flex-grow flex flex-col items-center justify-center text-center max-w-5xl pb-8 pt-28">
-          <h1 className="text-2xl md:text-2xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+          <h1 className="text-3xl md:text-2xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
             BUILT FOR APP GROWTH.<br/><span className="text-white"> DRIVEN BY AI.</span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-pink-600 animate-shimmer pb-2">
