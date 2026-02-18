@@ -5,9 +5,15 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
+  // 1. Global Ignores
   { ignores: ["dist"] },
+
+  // 2. Base Configs (Spreading them directly)
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+
+  // 3. Your Custom Configuration
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
