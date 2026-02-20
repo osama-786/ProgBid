@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => ({
   ].filter(Boolean),
   resolve: { alias: { "@": path.resolve(__dirname, "./src") } },
   build: {
+    target: "es2020", // <--- ADD THIS LINE
     chunkSizeWarningLimit: 1000, 
     rollupOptions: {
       output: {
