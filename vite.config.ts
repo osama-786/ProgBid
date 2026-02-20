@@ -11,7 +11,8 @@ export default defineConfig(({ mode }) => ({
   ].filter(Boolean),
   resolve: { alias: { "@": path.resolve(__dirname, "./src") } },
   build: {
-    target: "es2020", // <--- ADD THIS LINE
+    target: ["es2015", "edge88", "firefox78", "chrome87", "safari13"], 
+    cssTarget: "chrome61",
     chunkSizeWarningLimit: 1000, 
     rollupOptions: {
       output: {

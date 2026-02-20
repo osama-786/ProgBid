@@ -18,8 +18,11 @@
   },
   "puppeteerArgs": [
     "--no-sandbox",
-    "--disable-setuid-sandbox"
-  ]
+    "--disable-setuid-sandbox",
+    "--disable-dev-shm-usage"
+  ],
+  "skipThirdPartyRequests": true,
+  "cacheResponses": false
 },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
