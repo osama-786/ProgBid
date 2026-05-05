@@ -7,7 +7,7 @@ const companies = [
   { image: "/companies/monese.png", name: "Monese" },
   { image: "/companies/labeb.png", name: "Labeb" },
   { image: "/companies/bright.png", name: "Bright" },
-  { image: "/companies/crypto.png", name: "Crypto.com" }
+  { image: "/companies/Binance", name: "Binance" }
 ];
 
 const testimonials = [
@@ -36,8 +36,8 @@ const testimonials = [
   {
     name: "Emily Foster",
     title: "Performance Manager",
-    company: "Crypto.com",
-    logo: "/crypto.png", // Use the correct logo path for Crypto.com
+    company: "Binance",
+    logo: "/Binance.png", // Use the correct logo path for Binance
     rating: 5,
     text: "Best UA platform we've used. The reports are incredibly detailed, and our dedicated account manager feels like part of our team. Highly recommended!",
     avatar: "EF",
