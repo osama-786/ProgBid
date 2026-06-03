@@ -3,11 +3,11 @@ import { Star, BadgeCheck } from "lucide-react";
 
 const companies = [
   { image: "/companies/mcd.png", name: "McDonald's" },
-  { image: "/companies/noon.png", name: "Noon" },
+  { image: "/companies/Groww.png", name: "Groww" },
   { image: "/companies/monese.png", name: "Monese" },
   { image: "/companies/labeb.png", name: "Labeb" },
   { image: "/companies/bright.png", name: "Bright" },
-  { image: "/companies/Binance.png", name: "Binance" }
+  { image: "/companies/Exness logo.webp", name: "Exness" }
 ];
 
 const testimonials = [
@@ -36,8 +36,8 @@ const testimonials = [
   {
     name: "Emily Foster",
     title: "Performance Manager",
-    company: "Binance",
-    logo: "/Binance.png", // Use the correct logo path for Binance
+    company: "Exness",
+    logo: "/Exness logo.webp", // Use the correct logo path for Exness
     rating: 5,
     text: "Best UA platform we've used. The reports are incredibly detailed, and our dedicated account manager feels like part of our team. Highly recommended!",
     avatar: "EF",
